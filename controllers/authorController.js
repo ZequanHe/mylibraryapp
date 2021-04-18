@@ -18,7 +18,7 @@ const getAllAuthors = async (req, res) => {
 // find one author by their id
 const getOneAuthor = async (req, res) => {  
 	try {
-		const oneAuthor = await Author.findOne( {"authorId": req.params.id})
+		const oneAuthor = await Author.findOne({"authorId": req.params.id})
 		if (oneAuthor === null) {   // no author found in database
 			res.status(404)
 			return res.send("Author not found")
