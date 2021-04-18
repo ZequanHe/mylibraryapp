@@ -7,10 +7,10 @@ const authorRouter = express.Router()
 const authorController = require('../controllers/authorController.js')
 
 // handle the GET request to get all authors
-authorRouter.get('/', authorController.getAllAuthors)
+authorRouter.get('/', (req, res) => authorController.getAllAuthors(req, res))
 
 // handle the GET request to get one author
-authorRouter.get('/:authorId', authorController.getOneAuthor)
+authorRouter.get('/:authorId', (req, res) => authorController.getOneAuthor(req, res))
 
 // handle POST requests to add one author
 authorRouter.post('/', authorController.addAuthor)

@@ -1,15 +1,14 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
+app.use(express.json())  // replaces body-parser
 
-require('./models')
-
-app.use(bodyParser.json())  
 // set up author routes
+require('./models')
 const authorRouter = require('./routes/authorRouter')
 
 //get home page
 app.get('/',(req,res)=>{
+    console.log('connected')
     res.send('<h1>Library System</h1>')
 })
 // Handle author-management requests

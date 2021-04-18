@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 //link to author model
-const authors = mongoose.model("Author")
+const Author = mongoose.model("Author")
 
 
 // get all authors
